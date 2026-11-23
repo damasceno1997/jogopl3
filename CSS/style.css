@@ -1,0 +1,151 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 24px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #090d16 100%);
+    color: #f8fafc;
+}
+
+#cenario {
+    background-image: url("../images/fundo.png");
+    background-size: cover;
+    background-position: center bottom;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    width: min(900px, 90vw);
+    height: min(50vh, 420px);
+    min-height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+
+.painel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.pontuacao {
+    min-width: 150px;
+    padding: 10px 14px;
+    border: 2px solid #f8fafc;
+    border-radius: 6px;
+    background: rgba(15, 23, 42, 0.75);
+    font: bold 18px/1.2 monospace;
+    letter-spacing: 2px;
+}
+
+.pontuacao span {
+    margin-left: 8px;
+    color: #facc15;
+}
+
+button {
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 6px;
+    background: #e2e8f0;
+    color: #0f172a;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #facc15;
+}
+
+#boneco {
+    width: 58px;
+    height: 70px;
+    position: absolute;
+    bottom: 22%;
+    left: 20px;
+}
+
+#boneco img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+#obstaculo1 {
+    position: absolute;
+    bottom: 22%;
+    left: 100%;
+    width: 82px;
+    height: 100px;
+}
+
+#obstaculo1 img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+#obstaculo1 {
+    animation: mover 4s infinite linear 1s;
+}
+
+@keyframes mover {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -82px;
+    }
+}
+
+@keyframes pular {
+    0% {
+        bottom: 22%;
+    }
+    50% {
+        bottom: 68%;
+    }
+    100% {
+        bottom: 22%;
+    }
+}
+
+.pulando {
+    animation: pular 1s;
+}
+
+#cenario.pausado #obstaculo1,
+#cenario.pausado #boneco {
+    animation-play-state: paused;
+}
+
+#mensagem {
+    min-height: 1.5em;
+    margin: 0;
+    font-weight: bold;
+    color: #facc15;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 16px;
+    }
+
+    #cenario {
+        width: 94vw;
+        height: 38vh;
+        min-height: 220px;
+    }
+}

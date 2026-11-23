@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump with Pl</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <h1>Jump with Pl</h1>
+    <p>Use as setas ← → para andar e ↑ ou Espaço para pular</p>
+
+    <div class="painel">
+        <div class="pontuacao">PONTOS <span id="pontos">00000</span></div>
+        <button id="pause" type="button">Pausar</button>
+        <button id="reiniciar" type="button">Reiniciar</button>
+    </div>
+
+    <div id="cenario">
+        <div id="boneco">
+            <img src="images/runner.gif" alt="Personagem correndo">
+        </div>
+        <div id="obstaculo1">
+            <img src="images/pl.png" alt="Obstáculo">
+        </div>
+    </div>
+    <p id="mensagem" aria-live="polite"></p>
+   <script src="JS/script.js"></script>
+</body>
+</html>
